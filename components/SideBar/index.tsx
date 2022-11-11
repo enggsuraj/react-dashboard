@@ -17,8 +17,8 @@ const SideBar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.top}>
-        <NextImage src={logo} height="50" width="50" alt="logo" />
-        {/* <h4>Admin Dashboard</h4> */}
+        {/* <NextImage src={logo} height="50" width="50" alt="logo" /> */}
+        <h4>Admin Dashboard</h4>
       </div>
       <hr />
       <div className={styles.center}>
