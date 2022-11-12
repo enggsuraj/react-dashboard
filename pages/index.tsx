@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Widgets from "../components/Widgets";
 import Featured from "../components/Featured";
 import Chart from "../components/Chart";
+import Table from "../components/Table";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -25,7 +26,11 @@ export default function Home() {
         </div>
         <div className={styles.charts}>
           <Featured />
-          <Chart />
+          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
+        </div>
+        <div className={styles.listContainer}>
+          <div className={styles.listTitle}>Latest Transactions</div>
+          <Table />
         </div>
       </div>
     </div>
