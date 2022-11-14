@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import styles from "./DataTable.module.scss";
+import Link from "next/link";
 
 const DataTable = () => {
   const userColumns = [
@@ -161,17 +161,25 @@ const DataTable = () => {
   };
 
   return (
-    <Box sx={{ height: 600, width: "100%" }}>
-      <DataGrid
-        rows={data}
-        columns={userColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        checkboxSelection
-        disableSelectionOnClick
-        experimentalFeatures={{ newEditingApi: true }}
-      />
-    </Box>
+    <>
+      <div className={styles.datatableTitle}>
+        Add New User
+        <Link href="/users/new" className={styles.link}>
+          Add New
+        </Link>
+      </div>
+      <Box sx={{ height: 600, width: "100%" }}>
+        <DataGrid
+          rows={data}
+          columns={userColumns.concat(actionColumn)}
+          pageSize={9}
+          rowsPerPageOptions={[9]}
+          checkboxSelection
+          disableSelectionOnClick
+          experimentalFeatures={{ newEditingApi: true }}
+        />
+      </Box>
+    </>
   );
 };
 

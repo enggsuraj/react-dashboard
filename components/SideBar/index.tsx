@@ -11,14 +11,16 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import logo from "../../assets/dashboard.png";
+import Link from "next/link";
+
 import styles from "./SideBar.module.scss";
 
 const SideBar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.top}>
-        {/* <NextImage src={logo} height="50" width="50" alt="logo" /> */}
-        <h4>Admin Dashboard</h4>
+        <NextImage src={logo} height="50" width="50" alt="logo" />
+        {/* <h4>Admin Dashboard</h4> */}
       </div>
       <hr />
       <div className={styles.center}>
@@ -26,12 +28,16 @@ const SideBar = () => {
           <p className={styles.title}>MAIN</p>
           <li>
             <DashboardIcon className={styles.icon} />
-            <span>Dashboard</span>
+            <Link href="/">
+              <span>Dashboard</span>
+            </Link>
           </li>
           <p className={styles.title}>LIST</p>
           <li>
             <AccountCircleOutlinedIcon className={styles.icon} />
-            <span>Users</span>
+            <Link href="/users">
+              <span>Users</span>
+            </Link>
           </li>{" "}
           <li>
             <Inventory2OutlinedIcon className={styles.icon} />
